@@ -1,0 +1,37 @@
+<div class="table-container">
+    <div class="table-container__heading">
+        <h2 class="table-container__title">Employee Details</h2>
+    </div>
+    <table class="table-container__table">
+        <thead class="table-container__table-head">
+          <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Position</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
+        <tbody class="table-container__table-body">
+            @for (employee of employeeDetails; track employee.empId) {
+                <tr>
+                    <td>{{ employee.empId }}</td>
+                    <td>{{ employee.empName }}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>{{ employee.position }}</td>
+                    <td>{{ employee.salary |  currency:'INR':'symbol':'5.2-3'}}</td>
+                </tr>
+            }@empty {
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            }
+        </tbody>
+      </table>    
+</div>
+
+ 
